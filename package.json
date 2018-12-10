@@ -1,14 +1,23 @@
 {
   "name": "techdegree-project-6",
-  "version": "0.0.1",
-  "description": "",
-  "main": "app.js",
+  "version": "1.0.0",
+  "description": "techdegree project 6",
+  "main": "scraper.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "moment": "^2.22.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
+    "winston": "^3.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
+    "start": "node scraper.js",
     "test": "mocha"
   },
-  "author": "Kei",
-  "license": "MIT",
-  "devDependencies": {
-    "mocha": "^5.2.0"
-  }
+  "author": "Allen Liu",
+  "license": "MIT"
 }
