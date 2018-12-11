@@ -65,34 +65,3 @@ request(`${mainURL}${entryURL}`, (error, response, html) => {
     
 });
 
-
-
-
-
-
-
-// var options = {
-//     uri: `${mainURL}${entryURL}`,
-//     json: true,
-//     transform: function (body) {
-//         return cheerio.load(body);
-//     }
-// };
- 
-// rp(options)
-//     .then(function ($) {
-//         // Process html like you would with jQuery...
-//         //console.log($('*').html())
-        
-//        $('.products li a').each((i, el) => {
-//             productURL.push($(el).attr('href'));
-//         });
-//         //console.log(productURL)       
-//     })
-//     .catch(function (err) {
-//         // Crawling failed or Cheerio choked...
-//         console.log(err)
-//     });
-
-// console.log(productURL)
-
