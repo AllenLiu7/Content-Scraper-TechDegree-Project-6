@@ -1,17 +1,25 @@
 const rp = require('request-promise');
+const fs = require('fs');
 const request = require('request');
 const cheerio = require('cheerio');
 const moment = require('moment');
 const winston = require('winston');
+const mkdirp = require('mkdirp');
+
 //use moment moudule to format the time
 const now = moment().format('YYYY-MM-DD');
 const nowLogger = moment().format('ddd MMM DD YYYY HH:mm:ss [GMT]ZZ [(PST)]');
-// use fs module to write file
-const fs = require('fs');
-const writeStream = fs.createWriteStream(`./data/${now}.csv`);
 const mainURL = "http://shirts4mike.com/";
 const entryURL = "shirts.php";
 let productURL = [];
+
+//create the 'data' folder
+mkdirp('./data', function (err) {
+    if (err) console.error(err)
+    else console.log('Folder Done')
+});
+//write data to the csv file
+const writeStream = fs.createWriteStream(`./data/${now}.csv`);
 
 //write headers
 writeStream.write(`Title,Price,ImageURL,URL,Time \n`);
